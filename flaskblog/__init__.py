@@ -5,6 +5,7 @@ from flask_migrate import Migrate
 from flask_bcrypt import Bcrypt
 from flask_login import LoginManager
 from flask_mail import Mail
+from flask_simplemde import SimpleMDE
 
 
 app = Flask(__name__)
@@ -13,10 +14,13 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://jim:12139@localho
 
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
-migrate = Migrate(app)
+migrate = Migrate(app,db)
+simple = SimpleMDE()
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
 login_manager.login_message_category = 'info'
+
+
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True

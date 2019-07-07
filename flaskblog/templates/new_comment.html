@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="col-md-2"></div>
+
+        <div class="col-md-8 big">
+
+            {{ wtf.quick_form(comment_form) }}
+            {{simplemde.load}}
+        </div>
+
+        <div class="col-md-2"></div>
+
+    </div>
+
+{% endblock %}

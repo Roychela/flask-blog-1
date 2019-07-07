@@ -16,6 +16,8 @@
       <h2 class="article-title">{{ post.title }}</h2>
       <p class="article-content">{{ post.content }}</p>
     </div>
+                          <a class="comment" href="{{url_for('comments',post_id = post.id)}}"> <button type="button" name="button" class="btn btn-warning">comment</button> </a>
+
   </article>
   <!-- Modal -->
   <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

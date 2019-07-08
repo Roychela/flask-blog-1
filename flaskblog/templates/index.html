@@ -1,31 +1,30 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<!-- Font Awesome -->
+    <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
 <!-- Bootstrap core CSS -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/css/mdb.min.css" rel="stylesheet">
 
-    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/index.css')}}">
-    {% if title %}
-        <title>Flask Blog - {{ title }}</title>
-    {% else %}
-        <title>Flask Blog</title>
-    {% endif %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <title>THE FLASK BLOG</title>
 </head>
-    <body>
 
-     <!-- Main navigation -->
+<body class="text-center">
+
+
+    <!-- Main navigation -->
     <header>
 
         <!-- Full Page Intro -->
-        <div id="myDiv" class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="view jarallax" data-jarallax='{"speed": 0.2}' style="background-image: url('https://mdbootstrap.com/img/Photos/Others/img%20%2848%29.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center;">
             <!-- Mask & flexbox options-->
             <div class="mask rgba-black-light d-flex justify-content-center align-items-center">
                 <!-- Content -->
@@ -36,9 +35,9 @@
                         <div class="col-md-12 mb-4 white-text text-center">
                             <h1 class="h1-reponsive white-text text-uppercase font-weight-bold mb-0 pt-md-5 pt-5 wow fadeInDown" data-wow-delay="0.3s"><strong>THE FLASK BLOG</strong></h1>
                             <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s">
-                            <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>A place to view and post blogs</strong></h5>
-                            <a class="btn  btn-outline-white wow fadeInDown" data-wow-delay="1s" href="{{ url_for('home') }}">VIEW</a>
-                            <a class="btn  btn-outline-white" data-wow-delay="1s" href="{{ url_for('login') }}">POST</a>
+                            <h5 class="text-uppercase mb-4 white-text wow fadeInDown" data-wow-delay="0.4s"><strong>VIEW AND POST BLOGS</strong></h5>
+                            <a class="btn btn-outline-white wow fadeInDown" href="{{ url_for('home') }}">VIEW</a>
+                            <a class="btn btn-outline-white" href="{{ url_for('new_post') }}">POST </a>
                         </div>
                         <!--Grid column-->
                     </div>
@@ -50,9 +49,51 @@
         </div>
         <!-- Full Page Intro -->
     </header>
+    <!-- Modal -->
+    <!-- Central Modal Large -->
+    <div class="modal fade" id="centralModalSm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+
+
+            <div class="modal-content">
+                <div class="modal-header special-color">
+                    <h4 class="modal-title w-100" id="myModalLabel">RULES</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                </div>
+                <div class="modal-body text-left">
+                    <h3>Game Play :</h3>
+                    <p>A player rolls the die until either:</p>
+                    <ul>
+                        <li>A one is rolled, or</li>
+                        <li>The player chooses to hold i.e. stop rolling</li>
+                    </ul>
+                    <p><strong>NOTE :</strong></p>
+                    <p>When a one is rolled, accumulated points are discarded and the other player takes over the dice.</p>
+                    <p>When Hold is pressed, the accumulated points are added to the player's final Score.</p>
+                    <p><strong>The first player to get 100 is the Winner!</strong></p>
+                    <br>
+                    <h3>How to Play :</h3>
+                    <ol>
+                        <li>Click&nbsp;<em>Start</em>&nbsp; to begin the game</li>
+                        <li>Enter the name of the first then the second player</li>
+                        <li>ROLL the dice and click hold if you wish to stop rolling</li>
+                    </ol>
+                    <p><strong>NOTE :</strong> </p>
+                    <p>Resetting the game makes all counters become 0</p>
+                    <p>Refresh the game to start a new game with different players.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn peach-gradient btn-lg " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
     <!-- Main navigation -->
 
-   <!-- JQuery -->
+    <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <!-- Bootstrap tooltips -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
@@ -60,5 +101,6 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.3/js/mdb.min.js"></script>
-    </body>
+</body>
+
 </html>
